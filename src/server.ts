@@ -14,6 +14,7 @@ server.engine('mustache', mustache());
 
 server.use(express.static(path.join(__dirname, '..public'))); //arquivos css
 
+
 //direciona para pasta routes
 server.use(mainRoutes);
 

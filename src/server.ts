@@ -2,7 +2,7 @@ import express from 'express';
 import mustache from 'mustache-express';
 import path from 'path';
 import dotenv from 'dotenv';
-import { Request, Response } from 'express';
+import mainRoutes from './routes/index'
 
 dotenv.config()
 
@@ -14,9 +14,11 @@ server.engine('mustache', mustache());
 
 server.use(express.static(path.join(__dirname, '..public'))); //arquivos css
 
-//ROTAS
-server.get('/', (req: Request, res: Response)=>{
-    res.send("ola mundo");
-})
+//direciona para pasta routes
+server.use(mainRoutes);
+
+server.use((req, res)=>{
+    res.send("page not found")
+});
 
 server.listen(process.env.PORT);

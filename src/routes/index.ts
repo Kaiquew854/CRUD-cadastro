@@ -1,14 +1,14 @@
-import {Router } from 'express';
+import {Router, Response, Request } from 'express';
 
 const router = Router();
 
 //pagina home
-router.get('/', (req, res)=>{
-    res.send('pagina inicial')
-})
+router.get('/', (req: Request, res: Response)=>{
+    res.render("pages/home");
+});
 
 //pagina editar
-router.get('/editar', (req, res)=>{
+router.get('/editar', (req: Request, res: Response)=>{
     res.send('pagina editar')
 })
 

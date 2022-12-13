@@ -5,7 +5,7 @@
     <div class="container" style="width: 100%;">
 
         <div style="margin-bottom: 5px;">
-            <button type="button" class="btn btn-primary">Novo usuário</button>
+            <a href="/novoUsuario" class="btn btn-primary">Novo usuário</a>
         </div>
 
         <table class="table table-bordered align-middle text-center table-hover table-responsive-sm align-self-center">
@@ -18,20 +18,20 @@
                 </tr>
             </thead>
 
-
+            {{#userList}}
             <tbody>
                 <tr>
-                    <td>id1</td>
-                    <td>nome1</td>
-                    <td>idade1</td>
+                    <td>{{id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{age}}</td>
                     <td>
-                        <a class="btn btn-warning btn-sm" href="">Editar</a>
-                        <a class="btn btn-danger btn-sm" href="">excluir</a>
+                        <a class="btn btn-warning btn-sm" href="/editar/{{id}}">Editar</a>
+                        <a class="btn btn-danger btn-sm" href="/excluir/{{id}}">excluir</a>
                     </td>
                 </tr>
             </tbody>
+            {{/userList}}
 
-            
         </table>
 
-{{>partials/footer}}
+        {{>partials/footer}}

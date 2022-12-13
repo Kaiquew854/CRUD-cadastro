@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config()
 
-export const sequelize = new Sequelize(
+export const db = new Sequelize(
     process.env.DB_NAME as string,
     process.env.DB_USER as string,
     process.env.DB_PASSWORD as string,
@@ -11,7 +11,6 @@ export const sequelize = new Sequelize(
         dialect: 'mysql',
         port: parseInt(process.env.DB_PORT as string)
     }
-    
 );
 
-export default sequelize;
+export default db;

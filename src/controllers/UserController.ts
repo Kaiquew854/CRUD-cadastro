@@ -1,6 +1,8 @@
 import { Response, Request } from 'express';
-import { NumericLiteral } from 'typescript';
 import { UserTb } from '../models/database/UsersTable'
+
+
+
 
 export const home = async (req: Request, res: Response) => {
     let userList = await UserTb.findAll();
@@ -8,6 +10,9 @@ export const home = async (req: Request, res: Response) => {
         userList
     });
 }
+
+
+
 
 export const criar = async (req: Request, res: Response) => {
     let usrName: string = req.body.Nnome as string;
@@ -28,6 +33,9 @@ export const criar = async (req: Request, res: Response) => {
     res.redirect('/');
 }
 
+
+
+
 export const editar = async (req: Request, res: Response) => {
     let novaIdade: number = parseInt(req.body.Nidade as string);
     let identificacao: number = parseInt(req.body.identf as string)
@@ -42,6 +50,9 @@ export const editar = async (req: Request, res: Response) => {
 
     res.redirect('/');
 }
+
+
+
 
 export const excluir = async (req: Request, res: Response) => {
     let idToDelete: number = parseInt(req.params.identf as string);

@@ -6,22 +6,14 @@ const router = Router();
 //pagina home
 router.get('/', usrController.home);
 
-
-
-
-
-
-
+//pagina criar
+router.post('/novoUsuario', usrController.criar)
 
 //pagina editar
-router.get('/editar', (req, res)=>{
-    res.send('pagina editar')
-})
+router.post('/editar', usrController.editar)
 
 //pagina excluir
-router.get('/excluir', (req, res)=>{
-    res.send('pagina excluir')
-})
+router.get('/excluir/:identf', usrController.excluir)
 
 
 export default router;

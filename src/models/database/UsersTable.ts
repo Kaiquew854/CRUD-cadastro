@@ -21,7 +21,6 @@ export const UserTb = db.define<UserInstance>('User', {
         defaultValue: 18,
 
         set(valor: number) {
-            console.log(valor)
             if (valor < 18) {
                 valor = 18;
             }

@@ -3,7 +3,13 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "vercel-sapper"
+      "use": "@vercel/node"
     }
-  ]
+  ],
+  "routes": [
+    {
+        "src":"(./routes/.*)",
+        "dest": "src/server.ts"
+    }
+]
 }

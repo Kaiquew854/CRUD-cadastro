@@ -6,7 +6,7 @@ import mainRoutes from './routes/index'
 
 dotenv.config()
 
-const server = express();
+const server = (module.exports = express());
 
 server.use(express.urlencoded({extended: true}));
 

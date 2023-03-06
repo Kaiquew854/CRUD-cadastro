@@ -7,7 +7,7 @@ interface UserInstance extends Model {
     age: number;
 }
 
-export const UserTb = db.define<UserInstance>('User', {
+export const UserTb = db.define<UserInstance>('cadastro', {
     id: {
         primaryKey: true,
         autoIncrement: true,
@@ -28,6 +28,6 @@ export const UserTb = db.define<UserInstance>('User', {
         }
     }
 }, {
-    tableName: 'users',
+    tableName: 'cadastro',
     timestamps: false
 })

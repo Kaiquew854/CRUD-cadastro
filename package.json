@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf .dist && tsc",
-    "start": " node -e ts,json,mustache src/server.ts"
+    "start-dev": " nodemon -e ts,json,mustache src/server.ts"
   },
   "repository": {
-    
+    "type": "git",
     "url": "git+https://github.com/Kaiquew854/CRUD-cadastro.git"
   },
   "author": "",
